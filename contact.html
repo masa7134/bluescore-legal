@@ -3,80 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>お問い合わせ・ご意見・バグ報告 - BlueScore</title>
-<style>
-  body { font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif; max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; line-height: 1.8; color: #222; }
-  h1 { font-size: 1.5em; border-bottom: 2px solid #4a6fa5; padding-bottom: 8px; }
-  h2 { font-size: 1.15em; margin-top: 2em; border-left: 4px solid #4a6fa5; padding-left: 8px; }
-  .note { background: #f3f5f9; border-radius: 8px; padding: 12px 16px; }
-  .button { display: block; box-sizing: border-box; width: 100%; max-width: 420px; margin: 24px auto; padding: 16px 24px; background: #4a6fa5; color: #fff; text-align: center; font-size: 1.1em; font-weight: 600; border-radius: 10px; text-decoration: none; }
-  .button:active { background: #3b5a87; }
-  .env { font-family: ui-monospace, Menlo, monospace; font-size: 0.95em; word-break: break-all; }
-  footer { margin-top: 3em; font-size: 0.85em; color: #666; }
-</style>
+<title>移転しました - BlueScore</title>
+<link rel="canonical" href="https://bluescore.dev/support">
+<script>
+// アプリの設定画面が付けるクエリ（?app=&os=&device=）を新しいサポートページに渡す
+location.replace("https://bluescore.dev/support" + location.search);
+</script>
+<meta http-equiv="refresh" content="0; url=https://bluescore.dev/support">
 </head>
 <body>
-<h1>お問い合わせ・ご意見・バグ報告</h1>
-<p>iPad アプリ「BlueScore」へのご意見・ご要望・不具合のご報告は、下のボタンから開くフォームで受け付けています。送信に Google アカウントは必要ありません。</p>
-
-<a id="open-form" class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSe-Fe7RLv5t6FtwqoGMIsWEo8HdYtpBpwdCaSGuS5j3Cz4cSA/viewform">フォームを開く</a>
-
-<p class="note">フォームの「環境」欄には、アプリの設定画面からこのページを開いた場合、お使いの環境が自動で入ります：<br>
-<span id="env-text" class="env">（アプリから開くと、ここにアプリの版数・iPadOS の版数・機種が表示されます）</span></p>
-
-<h2>記録された「ミス」の削除をご希望のとき</h2>
-<p>BlueScore では、一度記録されたミスは原則として消えません。楽器の不調や誤操作など、ご自身の演奏によらないミスが記録された場合は、上のフォームから削除をお申し込みください。1 回のお申し込みで削除できるのは、ミス 1 件（1 回の停止）です。</p>
-<ul>
-  <li>曲名（プリセット曲か、ご自身で取り込んだ楽譜か）</li>
-  <li>小節番号（楽譜に印刷されている番号）と、分かればおおよその日時</li>
-  <li>削除をご希望の理由</li>
-  <li>返信用メールアドレス（必須。ここに「承認コード」をお送りします）</li>
-</ul>
-<p>お送りする承認コードは英数字 8 文字で、発行から 30 日間・1 回だけ使えます。アプリでは、練習画面の設定 →「この曲の設定」→「ミス記録を削除（承認コードが必要）」を開き、赤く表示された音符をタップしてコードを入力してください。</p>
-
-<h2>不具合をご報告いただくときのお願い</h2>
-<p>次の点を書いていただけると、原因の特定が早くなります。</p>
-<ul>
-  <li>曲名（プリセット曲か、ご自身で取り込んだ楽譜か）</li>
-  <li>どの画面で起きたか（ライブラリ・練習・通し演奏・レビューなど）</li>
-  <li>そこまでの操作の手順</li>
-  <li>期待した動きと、実際の動き</li>
-</ul>
-
-<h2>ご返信について</h2>
-<p>返信を希望される場合は、フォームの「返信用メールアドレス」欄にご記入ください。記入がない場合はご返信いたしませんが、内容はすべて確認し、今後の改善に活かします。</p>
-<p>ご返信までには数日いただくことがあります。フォームには氏名・住所などの個人情報を書かないでください。</p>
-
-<footer>
-<p>公開日: 2026年9月6日</p>
-<p>本ページは随時更新します。</p>
-</footer>
-
-<script>
-(function () {
-  // アプリの設定画面が付けるクエリ: ?app=1.0 (1)&os=iPadOS 26.5&device=iPad16,3
-  // Google フォームの「事前入力した URL」形式で「環境」欄に入れる。
-  // フォームを作り直したときは、この 2 定数と上の「フォームを開く」の href を差し替える（「事前入力した URL を取得」で確認）。
-  var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe-Fe7RLv5t6FtwqoGMIsWEo8HdYtpBpwdCaSGuS5j3Cz4cSA/viewform";
-  var ENV_ENTRY = "entry.1158351253"; // 「環境」欄
-
-  var params = new URLSearchParams(window.location.search);
-  var parts = [];
-  var app = params.get("app");
-  var os = params.get("os");
-  var device = params.get("device");
-  if (app) parts.push("アプリ " + app);
-  if (os) parts.push(os);
-  if (device) parts.push(device);
-  if (parts.length === 0) return;
-
-  var envText = parts.join(" / ");
-  document.getElementById("env-text").textContent = envText;
-
-  if (ENV_ENTRY.indexOf("PLACEHOLDER") !== -1) return;
-  var link = document.getElementById("open-form");
-  link.href = FORM_URL + "?usp=pp_url&" + ENV_ENTRY + "=" + encodeURIComponent(envText);
-})();
-</script>
+<p>このページは移転しました: <a href="https://bluescore.dev/support">https://bluescore.dev/support</a></p>
 </body>
 </html>
